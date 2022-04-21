@@ -81,7 +81,7 @@ if (isset($_POST['update'])) {
         <button class="btn-success" name="update"d>
           Actualizar
 </button>
-        <a href="../registroE.php">
+        <a class="text-white nolink" href="../registroE.php" >
 
           <button class="btn-danger" name="cancelar">
             Cancelar

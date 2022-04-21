@@ -17,7 +17,7 @@ if (isset($_POST['save_task'])) {
 
   $_SESSION['message'] = 'Tarea Guardada';
   $_SESSION['message_type'] = 'success';
-  header('Location: ../index.php');
+  header('Location: ../inicio.php');
 
 }
 
