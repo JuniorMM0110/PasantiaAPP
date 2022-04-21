@@ -1,9 +1,10 @@
 <?php include("Model/db.php"); ?>
 
 <?php include('includes/header.php'); ?>
+<link rel="stylesheet" href="css/styles.css">
 <p class="text-center h1 m-auto bg-dark ">Registro de Pasantes</p>
 <main class="container p-5 bg-dark" >
-  <div class="row">
+  <div class="row" id="content">
     <div class="col-md-6 col row ">
       <!-- MESSAGES -->
 
@@ -18,7 +19,7 @@
         
       <!-- ADD TASK FORM -->
       <div class=" card-body bg-dark">
-        <form action="Controller/save_task.php" method="POST" enctype="multipart/form-data">
+        <form action="Controller/save_task.php" id="formulario" method="POST" enctype="multipart/form-data">
           <div class="form-group">
             <input type="text" name="nombre" class="form-control" placeholder="Nombre" autofocus required>
           </div>
@@ -50,15 +51,15 @@
             <input type="text" name="pasantia" rows="1" class="form-control" placeholder="Nombre de la Empresa" required></input>
           </div>
           <input type="submit" name="save_task" class="btn btn-success btn-block" value="Enviar">
+          <br>
+      		<input type="file" name="archivo">
+		<button class="align-center">Subir Archivo...</button>
+
         </form>
       </div>
     </div>
 
             <!-- Formulario de ARCHIVO -->
-	<form action="Controller/sube.php" method="post" enctype="multipart/form-data" class="form-group"> 
-    <!-- Se usa el enctype="multipart/form-data" Para que se puedan recibir archivos por parte del formulario -->
-		<input type="file" name="archivo">
-		<button>Subir Archivo Seleccionado</button>
 
   </main>
 

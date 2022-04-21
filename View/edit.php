@@ -14,6 +14,7 @@ if  (isset($_GET['id'])) {
     $tecnica = $row['tecnica'];
     $profesorE = $row['maestro_encargado'];
     $pasantia = $row['pasantia'];
+    $estado= $row['estado'];
   }
 }
 
@@ -24,8 +25,9 @@ if (isset($_POST['update'])) {
   $tecnica = $_POST['tecnica'];
   $profesorE = $_POST['profesorE'];
   $pasantia = $_POST['pasantia'];
+  $estado = $_POST['estado'];
 
-  $query = "UPDATE task set nombre_estudiante = '$nombre', numero = '$numero', tecnica = '$tecnica', maestro_encargado  = '$profesorE', pasantia='$pasantia' WHERE id=$id";
+  $query = "UPDATE task set nombre_estudiante = '$nombre', numero = '$numero', tecnica = '$tecnica', maestro_encargado  = '$profesorE', pasantia='$pasantia', estado ='$estado' WHERE id=$id";
   mysqli_query($conn, $query);
   $_SESSION['message'] = 'Tarea actualizada';
   $_SESSION['message_type'] = 'warning';
@@ -64,6 +66,13 @@ if (isset($_POST['update'])) {
             <option value="Jose Luis Gonzalez">Jose Luis Gonzalez</option>
             <option value="Pedro Perez">Pedro Perez</option>
             <option value="Julio Alberto Sena">Julio Alberto Sena</option>
+          </select>
+        </div>
+        <div class="form-group" >
+          <select name="estado" id=""class="w-100" required value="<?php echo $estado ?>"> 
+            <option value="">Estado</option>
+            <option value="A">Activo</option>
+            <option value="I">Inactivo</option>
           </select>
         </div>
           <div class="form-group">

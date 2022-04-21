@@ -1,0 +1,51 @@
+#content{
+    justify-content:center;
+}
+
+.sentencias{
+    position: sticky;
+    margin: auto;
+    display: block;
+    text-align: center;
+    background-color: rgb(48, 48, 48);
+    border-radius: 40px;
+    width: 20%;
+    bottom: 10px;
+    
+}
+
+.sentencias-text a:hover{
+    text-decoration: none;
+    color: rgb(211, 211, 211);
+    transition:ease all 0.50s;
+    font-size: 18px;
+}
+
+.sentencias-text{
+    padding: 4px;
+}
+
+.sentencias-text ul a li{
+    list-style: none;
+    padding: 4px;
+    margin: 4px;
+    
+}
+.junto{
+    list-style: none;
+    display: inline-flex;
+    padding: 2px;
+    margin:0 auto;
+    display: block;
+    font-size: 15px;
+    text-align: center !important;
+
+    
+}
+
+.aunno:hover{
+    text-decoration: none;
+    color: rgb(199, 15, 15) !important;
+    transition:ease all 0.50s;
+    font-size: 18px;
+}

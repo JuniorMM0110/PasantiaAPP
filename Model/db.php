@@ -1,4 +1,5 @@
 <?php
+session_save_path(''); 
 session_start();
 
 $conn = mysqli_connect(
@@ -6,6 +7,6 @@ $conn = mysqli_connect(
   'root',
   '',
   'php_mysql_crud'
-) or die(mysqli_erro($mysqli));
+) or die(mysqli_error($mysqli));
 
 ?>

@@ -9,8 +9,6 @@
     <title>Document</title>
 </head>
 <body>
-  <h2 class="text-center p-3 ">Registros</h2>
-  
 
       <!-- ADD TASK FORM -->
       <table class="table table-bordered  table table-hover table-dark" >
@@ -30,7 +28,7 @@
         <tbody>
 
           <?php
-          $query = "SELECT * FROM task";
+          $query = "SELECT * FROM task WHERE estado = 'I'";
           $result_tasks = mysqli_query($conn, $query);    
           
           while($row = mysqli_fetch_assoc($result_tasks)) { ?>
