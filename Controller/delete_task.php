@@ -1,6 +1,6 @@
 <?php
 
-include("db.php");
+include("../Model/db.php");
 
 if(isset($_GET['id'])) {
   $id = $_GET['id'];
@@ -12,7 +12,7 @@ if(isset($_GET['id'])) {
 
   $_SESSION['message'] = 'Tarea removida';
   $_SESSION['message_type'] = 'danger';
-  header('Location: index.php');
+  header('Location: ../registroE.php');
 }
 
 ?>

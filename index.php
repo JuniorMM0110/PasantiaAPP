@@ -1,10 +1,10 @@
-<?php include("db.php"); ?>
+<?php include("Model/db.php"); ?>
 
 <?php include('includes/header.php'); ?>
-<p class="text-center h1 m-auto bg-dark ">Sistema</p>
+<p class="text-center h1 m-auto bg-dark ">Registro de Pasantes</p>
 <main class="container p-5 bg-dark" >
   <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-6 col row ">
       <!-- MESSAGES -->
 
       <?php if (isset($_SESSION['message'])) { ?>
@@ -18,60 +18,48 @@
         
       <!-- ADD TASK FORM -->
       <div class=" card-body bg-dark">
-        <form action="save_task.php" method="POST" enctype="multipart/form-data">
+        <form action="Controller/save_task.php" method="POST" enctype="multipart/form-data">
           <div class="form-group">
-            <input type="text" name="title" class="form-control" placeholder="Titulo" autofocus>
+            <input type="text" name="nombre" class="form-control" placeholder="Nombre" autofocus required>
           </div>
           <div class="form-group">
-            <textarea name="description" rows="2" class="form-control" placeholder="Descripción"></textarea>
+            <input type="text" name="numero" class="form-control" placeholder="Numero" autofocus required>
+          </div>
+          <div class="form-group">
+            <select name="tecnica" id="" class="w-100" required> 
+              <option value="" class="disabled">Tecnica</option>
+              <option value="Infomática">Infomática</option>
+              <option value="Gastronomia">Gastronomia</option>
+              <option value="Mercadeo">Mercadeo</option>
+              <option value="Contabilidad">Contabilidad</option>
+              <option value="Electricidad">Electricidad</option>
+              <option value="Electronica">Electronica</option>
+              <option value="Refrigeración">Refrigeración</option>
+            </select>          
+          </div>
+        <div class="form-group" >
+          <select name="profesorE" id=""class="w-100" required> 
+            <option value="">Profesor</option>
+            <option value="Juan Andre Moreno">Juan Andre Moreno</option>
+            <option value="Jose Luis Gonzalez">Jose Luis Gonzalez</option>
+            <option value="Pedro Perez">Pedro Perez</option>
+            <option value="Julio Alberto Sena">Julio Alberto Sena</option>
+          </select>
+        </div>
+          <div class="form-group">
+            <input type="text" name="pasantia" rows="1" class="form-control" placeholder="Nombre de la Empresa" required></input>
           </div>
           <input type="submit" name="save_task" class="btn btn-success btn-block" value="Enviar">
         </form>
       </div>
     </div>
-    <div class="col-md-8">
-      <table class="table table-bordered  table table-hover table-dark" >
-        <thead>
-          <tr>
-            <th>Titulo</th>
-            <th>Descripción</th>
-            <th>Codigo</th>
-            <th>Acciones</th>
-          </tr>
-        </thead>
-        <tbody>
-          
-          <?php
-          $query = "SELECT * FROM task";
-          $result_tasks = mysqli_query($conn, $query);    
-          
-          while($row = mysqli_fetch_assoc($result_tasks)) { ?>
-          <tr>
-            <td><?php echo $row['title']; ?></td>
-            <td><?php echo $row['description']; ?></td>
-            <td><?php echo $row['created_at']; ?></td>
-            <td>
-              <a href="edit.php?id=<?php echo $row['id']?>" class="btn btn-secondary">
-                <i class="fas fa-marker"></i>
-              </a>
-              <a href="delete_task.php?id=<?php echo $row['id']?>" class="btn btn-danger">
-                <i class="far fa-trash-alt"></i>
-              </a>
-            </td>
-          </tr>
-          <?php } ?>
-        </tbody>
-      </table>
-    </div>
-  </div>
-  <br>
 
             <!-- Formulario de ARCHIVO -->
-	<form action="sube.php" method="post" enctype="multipart/form-data" class="form card form"> 
+	<form action="Controller/sube.php" method="post" enctype="multipart/form-data" class="form-group"> 
     <!-- Se usa el enctype="multipart/form-data" Para que se puedan recibir archivos por parte del formulario -->
 		<input type="file" name="archivo">
-		<br><br>
-		<button>Subir Archivo</button>
-</main>
+		<button>Subir Archivo Seleccionado</button>
+
+  </main>
 
 <?php include('includes/footer.php'); ?>

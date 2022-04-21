@@ -14,5 +14,6 @@
     <nav class="navbar navbar-dark bg-dark">
       <div class="container">
         <a class="navbar-brand" href="index.php">Practica PHP</a>
+        <a class="navbar-brand" href="registroE.php">Registros</a>
       </div>
     </nav>
