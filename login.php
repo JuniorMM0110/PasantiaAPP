@@ -1,6 +1,6 @@
 <?php
 
-$conexion=mysqli_connect("localhost", "root", "", "test");
+  $conexion=mysqli_connect("localhost", "root", "", "php_mysql_crud");
 if (!$conexion){
     die("No hay conexion: "mysqli_connect_error());
 }
