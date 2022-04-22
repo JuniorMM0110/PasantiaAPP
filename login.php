@@ -20,7 +20,7 @@ if($nr == 1)
     header ("Location:inicio.php");
 }else{ 
 
-    echo"<script>alert('El usuario o la contraseña son incorrectos')</script>";    echo "<h1><a href='index.php'>Volver</a></h1>";
+    echo"<script>alert('El usuario o la contraseña son incorrectos')</script>";   echo "<h1><a href='index.php'>Volver</a></h1>";
 }
 
 ?>
