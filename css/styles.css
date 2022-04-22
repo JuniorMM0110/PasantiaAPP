@@ -56,3 +56,8 @@
     transition:ease all 0.50s;
     font-size: 18px;
 }
+
+.volver{
+    font-size: 40px;
+    text-align: center;
+}
